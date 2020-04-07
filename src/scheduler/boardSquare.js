@@ -3,6 +3,7 @@ import Square from './square'
 import { ItemTypes } from './constants'
 import { useDrop } from 'react-dnd'
 import { moveCard } from './observe'
+import './boardSquare.scss'
 function BoardSquare({ x, y, children }) {
     const [{ isOver }, drop] = useDrop({
         accept: ItemTypes.CARD,
@@ -13,16 +14,12 @@ function BoardSquare({ x, y, children }) {
     })
 
     return (
+
         <div
             ref={drop}
-            style={{
-                position: 'relative',
-                width: '100%',
-                height: '100%',
-                border: isOver ? "1px dashed blue" : ""
-            }}
+            className="board-square"
         >
-            <Square >{children}</Square>
+            <Square className={isOver ? "border-square" : ""} >{children}</Square>
 
         </div>
     )

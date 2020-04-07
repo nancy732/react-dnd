@@ -8,13 +8,13 @@ function renderSquare(j, i) {
         </div>
     )
 }
-export default function Timing() {
-
+export default function Timing({ from = 9, to = 18, range = 10 }) {
     let i, j
-    const timings = []
-    for (j = 9; j < 19; j++) {
 
-        for (i = 0; i < 60; i += 10) {
+    const timings = []
+    for (j = from; j < to; j++) {
+
+        for (i = 0; i < 60; i += range) {
             timings.push(renderSquare(j, i))
         }
     }

@@ -1,12 +1,9 @@
 import React from 'react'
-export default function Square({ children }) {
+import './square.scss'
+export default function Square({ className, children }) {
 
     return (
-        <div style={{
-            height: '50px',
-            borderTop: "1px dashed blue",
-            borderBottom: "1px dashed blue",
-        }} >{children}</div>
+        <div className={`squareStyle ${className}`}>{children}</div>
     )
 }
 
